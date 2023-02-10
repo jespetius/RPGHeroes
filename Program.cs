@@ -4,20 +4,56 @@
 
     class Program
     {
-        private static void Main(string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Welcome Hero to the adventure!");
-            Console.WriteLine("What is your name?");
-            string userName = Console.ReadLine();
-            Console.WriteLine(userName + " please tell me more about yourself");
-            Console.WriteLine("Mage (1)");
-            Console.WriteLine("Ranger (2)");
-            Console.WriteLine("Rogue (3)");
-            Console.WriteLine("Warrior (4)");
-            string heroClass = Console.ReadLine();
-            Console.WriteLine("NAME: " + userName);
-            Console.WriteLine("CLASS: " + heroClass);
-            Console.WriteLine("LEVEL: 1");
+            string userName = "";
+            string heroClass = "";
+            while (userName == "")
+            {
+              userName = LoginFunctions.getUsername();
+            }
+
+            while (true)
+            {
+                if (heroClass != "wrong input")
+                {
+                    heroClass = LoginFunctions.getHeroType();
+                    break;
+                }
+                else
+                {   
+                    Console.WriteLine("You gonna have long journey... Press 1-4 to select a class");
+                }
+            }
+
+            
+
+
+            Hero currentPlayer= new Mage(userName)
+            {
+                 
+            };
+            currentPlayer.LevelUp();
+            Hero allu = new Rogue(userName)
+            {
+
+            };
+            allu.LevelUp();
+
+            Hero jallu = new Warrior(userName)
+            {
+
+            };
+            jallu.LevelUp();
+
+            Hero puuhamies = new Ranger(userName)
+            {
+
+            };
+            puuhamies.LevelUp();
+            puuhamies.Display();
+            
+            
 
 
         }
