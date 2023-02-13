@@ -20,28 +20,43 @@ namespace RPGHeroes
 
         }
 
-        public static string getHeroType()
+        public static int getHeroType()
         {
             Console.WriteLine("Choose your character:");
             Console.WriteLine("Mage (1)");
             Console.WriteLine("Ranger (2)");
             Console.WriteLine("Rogue (3)");
             Console.WriteLine("Warrior (4)");
-            if (Console.ReadLine() == "1") 
-                return "Mage";
-            if (Console.ReadLine() == "2")
-                return "Ranger";
-            if (Console.ReadLine() == "3")
-                return "Rogue";
-            if (Console.ReadLine() == "4")
-                return "Warrior";
-            else
-            { 
-               
-                return "wrong input";
-            }
+            return Int32.Parse(Console.ReadLine()!);
         }
   
+        public void createUser( int heroClass, string username) 
+        {
+            if (heroClass == 1)
+            {
+                Hero currentPlayer = new Mage(username);
+                Console.WriteLine( username + "Mage was created");
+            }
+            if (heroClass == 2)
+            {
+                Hero currentPlayer = new Ranger(username);
+                Console.WriteLine("Mage was created");
+            }
+            if (heroClass== 3) 
+            {
+                Hero currentPlayer = new Rogue(username);
+                Console.WriteLine("Mage was created");
+            }
+            if (heroClass == 4)
+            {
+                Hero currentPlayer = new Warrior(username);
+            }
+            else
+            {
+                Console.WriteLine(heroClass + username);
+            }
+        }
+
 
 
     }

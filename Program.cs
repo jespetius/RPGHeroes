@@ -6,8 +6,10 @@
     {
         static void Main(string[] args)
         {
+           
             string userName = "";
-            string heroClass = "";
+            int userChoise = 0;
+            int heroClass = 0;
             while (userName == "")
             {
               userName = LoginFunctions.getUsername();
@@ -15,46 +17,52 @@
 
             while (true)
             {
-                if (heroClass != "wrong input")
+                userChoise = LoginFunctions.getHeroType();
+                if (userChoise>0 && userChoise <= 4) 
                 {
-                    heroClass = LoginFunctions.getHeroType();
-                    break;
+                    heroClass = userChoise;
+                    if (heroClass == 1)
+                    {
+                        Hero currentPlayer = new Mage(userName);
+                        break;
+                    }
+                    if (heroClass == 2)
+                    {
+                        Hero currentPlayer = new Ranger(userName);
+                        Console.WriteLine("Mage was created");
+                        break;
+                    }
+                    if (heroClass == 3)
+                    {
+                        Hero currentPlayer = new Rogue(userName);
+                        Console.WriteLine("Mage was created");
+                        break;
+                    }
+                    if (heroClass == 4)
+                    {
+                        Hero currentPlayer = new Warrior(userName);
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("kääkkääk");
+                    }
+
                 }
-                else
-                {   
-                    Console.WriteLine("You gonna have long journey... Press 1-4 to select a class");
+                else 
+                {
+                    Console.WriteLine("KÄÄK");
                 }
             }
-
             
 
-
-            Hero currentPlayer= new Mage(userName)
-            {
-                 
-            };
-            currentPlayer.LevelUp();
-            Hero allu = new Rogue(userName)
-            {
-
-            };
-            allu.LevelUp();
-
-            Hero jallu = new Warrior(userName)
-            {
-
-            };
-            jallu.LevelUp();
-
-            Hero puuhamies = new Ranger(userName)
-            {
-
-            };
-            puuhamies.LevelUp();
-            puuhamies.Display();
+            Hero Testman = new Mage("Test Man");
+            Testman.LevelUp();
             
+            //LoginFunctions.createUser(1, userName);
+       
             
-
+     
 
         }
     }
