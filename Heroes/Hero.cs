@@ -14,6 +14,8 @@ namespace RPGHeroes
         public int Level { get; set; }
 
         public HeroAttributes Attributes { get; set; }
+        public WeaponType[] ValidWeapons { get; set; }
+        public Weapon EquippedWeapon { get; private set; }
 
         public Hero(string name, int strength, int dexterity, int intelligence)
         {
@@ -23,9 +25,20 @@ namespace RPGHeroes
 
 
         }
-
+        /// <summary>
+        /// Used to Level Up Hero
+        /// </summary>
         public abstract void LevelUp();
+        /// <summary>
+        /// Used to display Hero's info.
+        /// </summary>
         public abstract void Display();
+
+
+        public virtual void EquipWeapon(Weapon weaponToEquip) 
+        {
+            EquippedWeapon = weaponToEquip;
+        }
 
     }
    

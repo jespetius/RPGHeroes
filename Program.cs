@@ -57,7 +57,10 @@
             
 
             Hero Testman = new Mage("Test Man");
+            Testman.Display();
             Testman.LevelUp();
+            Testman.EquipWeapon(new Weapon("harrys wand", 12, 1, WeaponType.Wands));
+            Testman.Display();
             
             //LoginFunctions.createUser(1, userName);
        

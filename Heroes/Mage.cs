@@ -11,6 +11,7 @@ namespace RPGHeroes
        
 
         public Mage(string username) : base(username,1,1,8) {
+            ValidWeapons = new[] { WeaponType.Wands };
             Console.WriteLine($"{Name} The Mage has born");
             Console.WriteLine($"Level: {Level}");
             Console.WriteLine($"Strength: {Attributes.Strength}");
@@ -35,6 +36,11 @@ namespace RPGHeroes
             Console.WriteLine($"Strength: {Attributes.Strength}");
             Console.WriteLine($"Dexterity: {Attributes.Dexterity}");
             Console.WriteLine($"Intelligence: {Attributes.Intelligence}");
+            if(EquippedWeapon!= null)
+            {
+                Console.WriteLine("Weapon: " + EquippedWeapon.Name);
+            }
+            
         }
 
 
