@@ -37,12 +37,18 @@ namespace RPGHeroes
         /// </summary>
         public abstract void Display();
 
-
+        /// <summary>
+        /// Wearing weapon to Hero
+        /// </summary>
+        /// <param name="weaponToEquip"></param>
         public virtual void EquipWeapon(Weapon weaponToEquip) 
         {
             EquippedWeapon = weaponToEquip;
         }
-
+        /// <summary>
+        /// Adding equipment to Hero
+        /// </summary>
+        /// <param name="armorToEquip"></param>
         public virtual void EquipArmor(Armor armorToEquip) 
         {
             EquippedArmor.Add(armorToEquip.Slot, armorToEquip);

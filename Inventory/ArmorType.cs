@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace RPGHeroes.Inventory
 {
+    /// <summary>
+    /// Possible armor types
+    /// </summary>
     public enum ArmorType
     {
         Cloth,
