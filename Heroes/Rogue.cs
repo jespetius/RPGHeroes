@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGHeroes.Inventory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace RPGHeroes
     {
         public Rogue(string name) : base(name, 2, 6, 1)
         {
+            ValidWeapons = new[] { WeaponType.Daggers, WeaponType.Swords };
+            ValidArmor = new[] { ArmorType.Leather, ArmorType.Mail };
             Console.WriteLine($"Mighty {Name} the Rogue was born.");
             Console.WriteLine($"Level: {Level}");
             Console.WriteLine($"Strength: {Attributes.Strength}");

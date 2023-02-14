@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGHeroes.Inventory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,8 @@ namespace RPGHeroes
        
 
         public Mage(string username) : base(username,1,1,8) {
-            ValidWeapons = new[] { WeaponType.Wands };
+            ValidWeapons = new[] { WeaponType.Wands, WeaponType.Staffs };
+            ValidArmor = new[] { ArmorType.Cloth };
             Console.WriteLine($"{Name} The Mage has born");
             Console.WriteLine($"Level: {Level}");
             Console.WriteLine($"Strength: {Attributes.Strength}");
@@ -40,7 +42,10 @@ namespace RPGHeroes
             {
                 Console.WriteLine("Weapon: " + EquippedWeapon.Name);
             }
-            
+            if (EquippedArmor != null)
+            {
+                Console.WriteLine(EquippedArmor.Count);
+            }
         }
 
 

@@ -1,4 +1,6 @@
-﻿namespace RPGHeroes
+﻿using RPGHeroes.Inventory;
+
+namespace RPGHeroes
 {
 
 
@@ -60,6 +62,7 @@
             Testman.Display();
             Testman.LevelUp();
             Testman.EquipWeapon(new Weapon("harrys wand", 12, 1, WeaponType.Wands));
+            Testman.EquipArmor(new Armor("Suoja", 1, EquipmentSlot.Head));
             Testman.Display();
             
             //LoginFunctions.createUser(1, userName);

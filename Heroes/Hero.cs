@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGHeroes.Inventory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,9 @@ namespace RPGHeroes
 
         public HeroAttributes Attributes { get; set; }
         public WeaponType[] ValidWeapons { get; set; }
+        public ArmorType[] ValidArmor { get; set; } 
         public Weapon EquippedWeapon { get; private set; }
+        public Dictionary<EquipmentSlot, Armor> EquippedArmor { get; private set; } = new();
 
         public Hero(string name, int strength, int dexterity, int intelligence)
         {
@@ -38,6 +41,11 @@ namespace RPGHeroes
         public virtual void EquipWeapon(Weapon weaponToEquip) 
         {
             EquippedWeapon = weaponToEquip;
+        }
+
+        public virtual void EquipArmor(Armor armorToEquip) 
+        {
+            EquippedArmor.Add(armorToEquip.Slot, armorToEquip);
         }
 
     }

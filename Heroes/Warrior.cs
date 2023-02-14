@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGHeroes.Inventory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,9 @@ namespace RPGHeroes
     {
         public Warrior(string name) : base(name,5,2,1) 
         {
+            ValidWeapons = new[] { WeaponType.Axes, WeaponType.Hammers, WeaponType.Swords };
+            ValidArmor = new[] { ArmorType.Mail, ArmorType.Plate };
+
             Console.WriteLine($"Furious {Name} the Warrior was born.");
         }
 

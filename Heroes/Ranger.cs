@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGHeroes.Inventory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace RPGHeroes
     class Ranger : Hero
     {
         public Ranger(string name) :base(name,1,7,1) {
+            ValidWeapons = new[] { WeaponType.Bows };
+            ValidArmor = new[] { ArmorType.Leather, ArmorType.Mail };
             Console.WriteLine($"{Name} Ranger in danger.");
 
         }
