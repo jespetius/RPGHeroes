@@ -72,6 +72,26 @@ namespace RPGHeroes.HelperFunctions
             }
         }
 
+        public static bool ShowHammers(Hero player)
+        {
+            Console.WriteLine("(1) Iron Hammer. DMG: 5, LVL 1");
+            Console.WriteLine("(2) Mjölnir. DMG: 130, LVL 17");
+            Console.WriteLine("(3) Back to Menu");
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    player.EquipWeapon(new Weapon("Iron Hammer", 5, 1, WeaponType.Hammers));
+                    Console.WriteLine("You are now using Iron Hammer");
+                    return true;
+                case "2":
+                    player.EquipWeapon(new Weapon("Mjölnir", 130, 17, WeaponType.Daggers));
+                    Console.WriteLine("Isn't it heavy?");
+                    return true;
+
+                default: return false;
+            }
+        }
 
 
 
