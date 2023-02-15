@@ -114,6 +114,27 @@ namespace RPGHeroes.HelperFunctions
             }
         }
 
+        public static bool ShowSwords(Hero player)
+        {
+            Console.WriteLine("(1) Practice Sword. DMG: 5, LVL 1");
+            Console.WriteLine("(2) Excalibur. DMG: 109, LVL 12");
+            Console.WriteLine("(3) Back to Menu");
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    player.EquipWeapon(new Weapon("Practice Sword", 5, 1, WeaponType.Swords));
+                    Console.WriteLine("You are now using Practice Sword");
+                    return true;
+                case "2":
+                    player.EquipWeapon(new Weapon("Excalibur", 99, 19, WeaponType.Swords));
+                    Console.WriteLine("Arthur is that you?");
+                    return true;
+
+                default: return false;
+            }
+        }
+
 
 
 
