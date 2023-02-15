@@ -186,8 +186,9 @@ namespace RPGHeroes
             Console.WriteLine("(3) Daggers: ");
             Console.WriteLine("(4) Hammers: ");
             Console.WriteLine("(5) Staffs: ");
-            Console.WriteLine("(6) Wands: ");
-            Console.WriteLine("(7) Back to Main Menu");
+            Console.WriteLine("(6) Swords: ");
+            Console.WriteLine("(7) Wands:");
+            Console.WriteLine("(8) Back to Main Menu");
 
             switch(Console.ReadLine())
             {
@@ -207,8 +208,10 @@ namespace RPGHeroes
                     DisplayWeaponTypes.ShowStaffs(player);
                     return true;
                 case "6": 
+                    DisplayWeaponTypes.ShowSwords(player);
                     return true;
                 case "7": 
+                    DisplayWeaponTypes.ShowWands(player);
                     return true;
                 default : return false;
             }

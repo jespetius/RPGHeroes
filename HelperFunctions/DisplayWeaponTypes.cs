@@ -127,7 +127,7 @@ namespace RPGHeroes.HelperFunctions
                     Console.WriteLine("You are now using Practice Sword");
                     return true;
                 case "2":
-                    player.EquipWeapon(new Weapon("Excalibur", 99, 19, WeaponType.Swords));
+                    player.EquipWeapon(new Weapon("Excalibur", 109, 12, WeaponType.Swords));
                     Console.WriteLine("Arthur is that you?");
                     return true;
 
@@ -135,6 +135,26 @@ namespace RPGHeroes.HelperFunctions
             }
         }
 
+        public static bool ShowWands(Hero player)
+        {
+            Console.WriteLine("(1) Common Wand. DMG: 5, LVL 1");
+            Console.WriteLine("(2) Phoenix Feather Yew Wand. DMG: 89, LVL 9");
+            Console.WriteLine("(3) Back to Menu");
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    player.EquipWeapon(new Weapon("Common Wand", 5, 1, WeaponType.Wands));
+                    Console.WriteLine("You are now using Common Wand");
+                    return true;
+                case "2":
+                    player.EquipWeapon(new Weapon("Phoenix Feather Yew Wand", 89, 9, WeaponType.Wands));
+                    Console.WriteLine("The boy who lived should be careful...");
+                    return true;
+
+                default: return false;
+            }
+        }
 
 
 
