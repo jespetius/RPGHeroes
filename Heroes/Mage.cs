@@ -60,7 +60,8 @@ namespace RPGHeroes
             {
                 Console.WriteLine("Weapon: " + EquippedWeapon.Name);
             }
-           
+           ShowCurrentArmor();
+
         }
 
         public override double HeroDamage()

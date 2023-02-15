@@ -83,7 +83,21 @@ namespace RPGHeroes
             
             
         }
+        public virtual void ShowCurrentArmor()
+        {
+            if (EquippedArmor.Count != 0)
+            {
+                Console.WriteLine("Armors");
+                for (int index = 0; index < EquippedArmor.Count; index++)
+                {
+                    KeyValuePair<EquipmentSlot, Armor> armor = EquippedArmor.ElementAt(index);
+                    if (armor.Value == null) continue;
+                    Console.WriteLine($"{armor.Value.Slot}: {armor.Value.Name} Str: {armor.Value.StrengthBoost} Dex: {armor.Value.IntelligenceBoost} Intel: {armor.Value.IntelligenceBoost} \n");
+                }
+            }
 
+
+        }
         
 
 
