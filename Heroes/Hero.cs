@@ -83,6 +83,9 @@ namespace RPGHeroes
             
             
         }
+        /// <summary>
+        /// List of armor currently on hero
+        /// </summary>
         public virtual void ShowCurrentArmor()
         {
             if (EquippedArmor.Count != 0)
