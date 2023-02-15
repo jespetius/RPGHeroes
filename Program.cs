@@ -57,11 +57,11 @@ namespace RPGHeroes
                 }
             }
             
-
+            
             Hero Testman = new Mage("Test Man");
             Testman.Display();
             Testman.LevelUp();
-            Testman.EquipWeapon(new Weapon("harrys wand", 12, 1, WeaponType.Wands));
+            Testman.EquipWeapon(new Weapon("harrys wand", 100, 1, WeaponType.Wands));
             Testman.EquipArmor(new Armor("Suoja", 1, EquipmentSlot.Head));
             Testman.Display();
             

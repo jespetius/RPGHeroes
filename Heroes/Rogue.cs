@@ -11,6 +11,7 @@ namespace RPGHeroes
     {
         public Rogue(string name) : base(name, 2, 6, 1)
         {
+            Class = "Rogue";
             ValidWeapons = new[] { WeaponType.Daggers, WeaponType.Swords };
             ValidArmor = new[] { ArmorType.Leather, ArmorType.Mail };
             Console.WriteLine($"Mighty {Name} the Rogue was born.");
@@ -44,6 +45,13 @@ namespace RPGHeroes
             Console.WriteLine($"Strength: {Attributes.Strength}");
             Console.WriteLine($"Dexterity: {Attributes.Dexterity}");
             Console.WriteLine($"Intelligence: {Attributes.Intelligence}");
+        }
+
+        public override double HeroDamage()
+        {
+            double weaponMultiplier = (EquippedWeapon == null ? 1 : EquippedWeapon.Damage);
+            double result = Math.Round(weaponMultiplier * (1 + Attributes.Dexterity / 100.0), MidpointRounding.AwayFromZero);
+            return result;
         }
 
 

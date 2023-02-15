@@ -14,6 +14,8 @@ namespace RPGHeroes
 
         public int Level { get; set; }
 
+        public string Class { get; set; }
+
         public HeroAttributes Attributes { get; set; }
         public WeaponType[] ValidWeapons { get; set; }
         public ArmorType[] ValidArmor { get; set; } 
@@ -43,7 +45,18 @@ namespace RPGHeroes
         /// <param name="weaponToEquip"></param>
         public virtual void EquipWeapon(Weapon weaponToEquip) 
         {
-            EquippedWeapon = weaponToEquip;
+            if (weaponToEquip.RequiredLevel > Level)
+            {
+                throw new InvalidWeaponException("You dont have Level to equip this weapon");
+            }
+            else if (!ValidWeapons.Contains(weaponToEquip.WeaponType)) 
+            {
+                throw new InvalidWeaponException("You cant use this type of weapon");
+            }
+            else
+            {
+                EquippedWeapon = weaponToEquip;
+            }
         }
         /// <summary>
         /// Adding equipment to Hero
@@ -53,6 +66,8 @@ namespace RPGHeroes
         {
             EquippedArmor.Add(armorToEquip.Slot, armorToEquip);
         }
+
+        public abstract double HeroDamage();
 
     }
    
