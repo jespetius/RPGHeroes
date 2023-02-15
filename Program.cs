@@ -4,8 +4,9 @@ namespace RPGHeroes
 {
 
 
-    class Program
+    public class Program
     {
+        
         static void Main(string[] args)
         {
            
@@ -16,58 +17,21 @@ namespace RPGHeroes
             {
               userName = LoginFunctions.getUsername();
             }
-
-            while (true)
-            {
-                userChoise = LoginFunctions.getHeroType();
-                if (userChoise>0 && userChoise <= 4) 
-                {
-                    heroClass = userChoise;
-                    if (heroClass == 1)
-                    {
-                        Hero currentPlayer = new Mage(userName);
-                        break;
-                    }
-                    if (heroClass == 2)
-                    {
-                        Hero currentPlayer = new Ranger(userName);
-                        Console.WriteLine("Mage was created");
-                        break;
-                    }
-                    if (heroClass == 3)
-                    {
-                        Hero currentPlayer = new Rogue(userName);
-                        Console.WriteLine("Mage was created");
-                        break;
-                    }
-                    if (heroClass == 4)
-                    {
-                        Hero currentPlayer = new Warrior(userName);
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("kääkkääk");
-                    }
-
-                }
-                else 
-                {
-                    Console.WriteLine("KÄÄK");
-                }
-            }
             
-            
+
             Hero Testman = new Mage("Test Man");
-            Testman.Display();
-            Testman.LevelUp();
             Testman.EquipWeapon(new Weapon("harrys wand", 100, 1, WeaponType.Wands));
             Testman.EquipArmor(new Armor("Suoja", 1, EquipmentSlot.Head, ArmorType.Cloth, 10, 0, 0));
-            Testman.Display();
             Testman.EquipArmor(new Armor("Beanie", 1, EquipmentSlot.Head, ArmorType.Cloth, 1, 2, 4));
             Testman.EquipArmor(new Armor("Leather Boots", 1, EquipmentSlot.Legs, ArmorType.Cloth, 0, 5, 0));
             Testman.EquipArmor(new Armor("Leather Vest", 1, EquipmentSlot.Body, ArmorType.Cloth, 2, 3, 5));
-            Testman.Display();
+
+            bool showMenu = true;
+            while (showMenu)
+            {
+                showMenu = DisplayFunctions.MainMenu(Testman);
+            }
+            
 
             //LoginFunctions.createUser(1, userName);
 

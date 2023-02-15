@@ -29,6 +29,7 @@ namespace RPGHeroes
             Attributes.Strength += 1;
             Attributes.Dexterity += 1;
             Attributes.Intelligence += 5;
+            Console.WriteLine("Hurray you are now Level " + Level);
 
             
         }
