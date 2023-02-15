@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGHeroes.Heroes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
@@ -20,42 +21,54 @@ namespace RPGHeroes
 
         }
 
-        public static int getHeroType()
+        public static String getHeroType(string userName)
         {
+            bool showMenu = true;
             Console.WriteLine("Choose your character:");
             Console.WriteLine("Mage (1)");
             Console.WriteLine("Ranger (2)");
             Console.WriteLine("Rogue (3)");
             Console.WriteLine("Warrior (4)");
-            return Int32.Parse(Console.ReadLine()!);
+            
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Hero mage = new Mage(userName);
+                    while (showMenu)
+                    {
+                        showMenu = DisplayFunctions.MainMenu(mage);
+                    }
+
+                    return "Mage";
+                case "2":
+                    Hero ranger = new Ranger(userName);
+                    while (showMenu)
+                    {
+                        showMenu = DisplayFunctions.MainMenu(ranger);
+                    }
+                    return "Ranger";
+                case "3":
+                    Hero rogue = new Rogue(userName);
+                    while (showMenu)
+                    {
+                        showMenu = DisplayFunctions.MainMenu(rogue);
+                    }
+                    return "Rogue";
+                case "4":
+                    Hero warrior = new Warrior(userName);
+                    while (showMenu)
+                    {
+                        showMenu = DisplayFunctions.MainMenu(warrior);
+                    }
+                    return "Warrior";
+                   
+
+                default: return "";  
+
+            }
+
         }
   
-        public void createUser( int heroClass, string username) 
-        {
-            if (heroClass == 1)
-            {
-                Hero currentPlayer = new Mage(username);
-                Console.WriteLine( username + "Mage was created");
-            }
-            if (heroClass == 2)
-            {
-                Hero currentPlayer = new Ranger(username);
-                Console.WriteLine("Mage was created");
-            }
-            if (heroClass== 3) 
-            {
-                Hero currentPlayer = new Rogue(username);
-                Console.WriteLine("Mage was created");
-            }
-            if (heroClass == 4)
-            {
-                Hero currentPlayer = new Warrior(username);
-            }
-            else
-            {
-                Console.WriteLine(heroClass + username);
-            }
-        }
 
 
 
