@@ -62,13 +62,15 @@ namespace RPGHeroes
             Testman.Display();
             Testman.LevelUp();
             Testman.EquipWeapon(new Weapon("harrys wand", 100, 1, WeaponType.Wands));
-            Testman.EquipArmor(new Armor("Suoja", 1, EquipmentSlot.Head));
+            Testman.EquipArmor(new Armor("Suoja", 1, EquipmentSlot.Head, ArmorType.Cloth, 10, 0, 0));
             Testman.Display();
-            
+            Testman.EquipArmor(new Armor("Suoja", 1, EquipmentSlot.Head, ArmorType.Cloth, 0, 0, 0));
+            Testman.Display();
+
             //LoginFunctions.createUser(1, userName);
-       
-            
-     
+
+
+
 
         }
     }

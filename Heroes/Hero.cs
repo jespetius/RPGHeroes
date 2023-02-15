@@ -1,6 +1,8 @@
-﻿using RPGHeroes.Inventory;
+﻿using RPGHeroes.HelperFunctions;
+using RPGHeroes.Inventory;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +18,12 @@ namespace RPGHeroes
 
         public string Class { get; set; }
 
+        
         public HeroAttributes Attributes { get; set; }
         public WeaponType[] ValidWeapons { get; set; }
         public ArmorType[] ValidArmor { get; set; } 
         public Weapon EquippedWeapon { get; private set; }
-        public Dictionary<EquipmentSlot, Armor> EquippedArmor { get; private set; } = new();
+        public Dictionary<EquipmentSlot, Armor> EquippedArmor { get; set; } = new();
 
         public Hero(string name, int strength, int dexterity, int intelligence)
         {
@@ -48,6 +51,7 @@ namespace RPGHeroes
             if (weaponToEquip.RequiredLevel > Level)
             {
                 throw new InvalidWeaponException("You dont have Level to equip this weapon");
+               
             }
             else if (!ValidWeapons.Contains(weaponToEquip.WeaponType)) 
             {
@@ -56,6 +60,7 @@ namespace RPGHeroes
             else
             {
                 EquippedWeapon = weaponToEquip;
+
             }
         }
         /// <summary>
@@ -64,9 +69,28 @@ namespace RPGHeroes
         /// <param name="armorToEquip"></param>
         public virtual void EquipArmor(Armor armorToEquip) 
         {
+            if(armorToEquip.RequiredLevel > Level)
+            {
+                throw new InvalidArmorException("You need to level up to wear this!");
+            }
+            else if (!ValidArmor.Contains(armorToEquip.ArmorType))
+            {
+                throw new InvalidArmorException("This class cannot wear these kind of armors");
+
+            }
+            EquippedArmor.Remove(armorToEquip.Slot);
             EquippedArmor.Add(armorToEquip.Slot, armorToEquip);
+            
+            
         }
 
+        
+
+
+        /// <summary>
+        /// Generate Heros damage
+        /// </summary>
+        /// <returns></returns>
         public abstract double HeroDamage();
 
     }
