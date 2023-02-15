@@ -204,6 +204,7 @@ namespace RPGHeroes
                     DisplayWeaponTypes.ShowHammers(player);
                     return true;
                 case "5":
+                    DisplayWeaponTypes.ShowStaffs(player);
                     return true;
                 case "6": 
                     return true;

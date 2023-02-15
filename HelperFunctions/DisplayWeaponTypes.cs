@@ -85,13 +85,35 @@ namespace RPGHeroes.HelperFunctions
                     Console.WriteLine("You are now using Iron Hammer");
                     return true;
                 case "2":
-                    player.EquipWeapon(new Weapon("Mjölnir", 130, 17, WeaponType.Daggers));
+                    player.EquipWeapon(new Weapon("Mjölnir", 130, 17, WeaponType.Hammers));
                     Console.WriteLine("Isn't it heavy?");
                     return true;
 
                 default: return false;
             }
         }
+
+        public static bool ShowStaffs(Hero player)
+        {
+            Console.WriteLine("(1) Wooden Staff. DMG: 5, LVL 1");
+            Console.WriteLine("(2) Gandalf's Stick. DMG: 999, LVL 99");
+            Console.WriteLine("(3) Back to Menu");
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    player.EquipWeapon(new Weapon("Wooden Staff", 5, 1, WeaponType.Staffs));
+                    Console.WriteLine("You are now using Wooden Staff");
+                    return true;
+                case "2":
+                    player.EquipWeapon(new Weapon("Gandalf's Stick", 999, 99, WeaponType.Staffs));
+                    Console.WriteLine("YOU SHALL NOT PASS!!!");
+                    return true;
+
+                default: return false;
+            }
+        }
+
 
 
 
