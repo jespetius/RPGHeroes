@@ -6,7 +6,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGHeroes
+namespace RPGHeroes.HelperFunctions
 {
     public class LoginFunctions
     {
@@ -21,7 +21,7 @@ namespace RPGHeroes
 
         }
 
-        public static String getHeroType(string userName)
+        public static string getHeroType(string userName)
         {
             bool showMenu = true;
             Console.WriteLine("Choose your character:");
@@ -29,7 +29,7 @@ namespace RPGHeroes
             Console.WriteLine("Ranger (2)");
             Console.WriteLine("Rogue (3)");
             Console.WriteLine("Warrior (4)");
-            
+
             switch (Console.ReadLine())
             {
                 case "1":
@@ -61,14 +61,14 @@ namespace RPGHeroes
                         showMenu = DisplayFunctions.MainMenu(warrior);
                     }
                     return "Warrior";
-                   
 
-                default: return "";  
+
+                default: return "";
 
             }
 
         }
-  
+
 
 
 

@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGHeroes
+namespace RPGHeroes.Heroes
 {
-    class Warrior :Hero
+    class Warrior : Hero
 
     {
-        public Warrior(string name) : base(name,5,2,1) 
+        public Warrior(string name) : base(name, 5, 2, 1)
         {
             Class = "Warrior";
             ValidWeapons = new[] { WeaponType.Axes, WeaponType.Hammers, WeaponType.Swords };
@@ -28,11 +28,11 @@ namespace RPGHeroes
             Console.WriteLine("Hurray you are now Level " + Level);
 
         }
-        
+
 
         public override double HeroDamage()
         {
-            double weaponMultiplier = (EquippedWeapon == null ? 1 : EquippedWeapon.Damage);
+            double weaponMultiplier = EquippedWeapon == null ? 1 : EquippedWeapon.Damage;
             int totalStrength = Attributes.Strength;
 
             if (EquippedArmor.Count != 0)

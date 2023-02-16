@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGHeroes
+namespace RPGHeroes.Inventory
 {
     public class Weapon : Item
     {
@@ -18,10 +18,10 @@ namespace RPGHeroes
         /// <param name="requiredLevel"></param>
         /// <param name="weaponType"></param>
         public Weapon(string name, double damage, int requiredLevel, WeaponType weaponType) :
-            base(name,requiredLevel,EquipmentSlot.Weapon)
+            base(name, requiredLevel, EquipmentSlot.Weapon)
         {
-            Damage= damage;
-            WeaponType= weaponType;
+            Damage = damage;
+            WeaponType = weaponType;
         }
 
 

@@ -1,4 +1,4 @@
-﻿using RPGHeroes.HelperFunctions;
+﻿using RPGHeroes.Heroes;
 using RPGHeroes.Inventory;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGHeroes
+namespace RPGHeroes.HelperFunctions
 {
     public class DisplayFunctions
     {
@@ -16,7 +16,7 @@ namespace RPGHeroes
         /// <param name="player"></param>
         /// <returns></returns>
         public static bool MainMenu(Hero player)
-        { 
+        {
             Console.WriteLine("Hello");
             Console.WriteLine("(1) Hero Info:");
             Console.WriteLine("(2) Level Up:");
@@ -35,10 +35,10 @@ namespace RPGHeroes
                 case "3":
                     WearArmorDisplay(player);
                     return true;
-                case"4":
+                case "4":
                     ShowWeaponTypes(player);
                     return true;
-                case"5":
+                case "5":
                     return false;
 
                 default: return true;
@@ -46,16 +46,16 @@ namespace RPGHeroes
 
         }
 
-        public static bool WearArmorDisplay(Hero player) 
+        public static bool WearArmorDisplay(Hero player)
         {
             Console.WriteLine("(1) Head: ");
             Console.WriteLine("(2) Body: ");
             Console.WriteLine("(3) Legs: ");
             Console.WriteLine("(4) Back to Main Menu");
 
-            switch(Console.ReadLine()) 
-            { 
-                case"1":
+            switch (Console.ReadLine())
+            {
+                case "1":
                     ArmorListDisplayHead(player);
                     return true;
                 case "2":
@@ -66,7 +66,7 @@ namespace RPGHeroes
                     return true;
 
 
-                default : return true;
+                default: return true;
             }
         }
         /// <summary>
@@ -102,8 +102,8 @@ namespace RPGHeroes
                     return true;
 
 
-                default : return false;
-        }
+                default: return false;
+            }
 
 
 
@@ -190,7 +190,7 @@ namespace RPGHeroes
             Console.WriteLine("(7) Wands:");
             Console.WriteLine("(8) Back to Main Menu");
 
-            switch(Console.ReadLine())
+            switch (Console.ReadLine())
             {
                 case "1":
                     DisplayWeaponTypes.ShowAxes(player);
@@ -207,15 +207,15 @@ namespace RPGHeroes
                 case "5":
                     DisplayWeaponTypes.ShowStaffs(player);
                     return true;
-                case "6": 
+                case "6":
                     DisplayWeaponTypes.ShowSwords(player);
                     return true;
-                case "7": 
+                case "7":
                     DisplayWeaponTypes.ShowWands(player);
                     return true;
-                default : return false;
+                default: return false;
             }
-        } 
+        }
 
     }
 }

@@ -7,21 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGHeroes
+namespace RPGHeroes.Heroes
 {
     public abstract class Hero
     {
-       
+
         public string Name { get; set; }
 
         public int Level { get; set; }
 
         public string Class { get; set; }
 
-        
+
         public HeroAttributes Attributes { get; set; }
         public WeaponType[] ValidWeapons { get; set; }
-        public ArmorType[] ValidArmor { get; set; } 
+        public ArmorType[] ValidArmor { get; set; }
         public Weapon EquippedWeapon { get; private set; }
         public Dictionary<EquipmentSlot, Armor> EquippedArmor { get; set; } = new();
 
@@ -40,9 +40,9 @@ namespace RPGHeroes
         /// <summary>
         /// Used to display Hero's info.
         /// </summary>
-        
 
-        public virtual void Display() 
+
+        public virtual void Display()
         {
             int totalStrength = Attributes.Strength;
             int totalDexterity = Attributes.Dexterity;
@@ -80,14 +80,14 @@ namespace RPGHeroes
         /// Wearing weapon to Hero
         /// </summary>
         /// <param name="weaponToEquip"></param>
-        public virtual void EquipWeapon(Weapon weaponToEquip) 
+        public virtual void EquipWeapon(Weapon weaponToEquip)
         {
             if (weaponToEquip.RequiredLevel > Level)
             {
                 throw new InvalidWeaponException("You dont have Level to equip this weapon");
-               
+
             }
-            else if (!ValidWeapons.Contains(weaponToEquip.WeaponType)) 
+            else if (!ValidWeapons.Contains(weaponToEquip.WeaponType))
             {
                 throw new InvalidWeaponException("You cant use this type of weapon");
             }
@@ -101,9 +101,9 @@ namespace RPGHeroes
         /// Adding equipment to Hero
         /// </summary>
         /// <param name="armorToEquip"></param>
-        public virtual void EquipArmor(Armor armorToEquip) 
+        public virtual void EquipArmor(Armor armorToEquip)
         {
-            if(armorToEquip.RequiredLevel > Level)
+            if (armorToEquip.RequiredLevel > Level)
             {
                 throw new InvalidArmorException("You need to level up to wear this!");
             }
@@ -114,8 +114,8 @@ namespace RPGHeroes
             }
             EquippedArmor.Remove(armorToEquip.Slot);
             EquippedArmor.Add(armorToEquip.Slot, armorToEquip);
-            
-            
+
+
         }
         /// <summary>
         /// List of armor currently on hero
@@ -135,7 +135,7 @@ namespace RPGHeroes
 
 
         }
-        
+
 
 
         /// <summary>
@@ -145,5 +145,5 @@ namespace RPGHeroes
         public abstract double HeroDamage();
 
     }
-   
+
 }

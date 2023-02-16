@@ -5,13 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGHeroes
+namespace RPGHeroes.Heroes
 {
-    class Mage : Hero
+    public class Mage : Hero
     {
-       
 
-        public Mage(string username) : base(username,1,1,8) {
+
+        public Mage(string username) : base(username, 1, 1, 8)
+        {
             Class = "Mage";
             ValidWeapons = new[] { WeaponType.Wands, WeaponType.Staffs };
             ValidArmor = new[] { ArmorType.Cloth };
@@ -31,9 +32,9 @@ namespace RPGHeroes
             Attributes.Intelligence += 5;
             Console.WriteLine("Hurray you are now Level " + Level);
 
-            
+
         }
-       
+
         public override double HeroDamage()
         {
             int totalIntelligence = Attributes.Intelligence;
@@ -48,7 +49,7 @@ namespace RPGHeroes
                 }
             }
 
-            double weaponMultiplier = (EquippedWeapon == null ? 1 : EquippedWeapon.Damage);
+            double weaponMultiplier = EquippedWeapon == null ? 1 : EquippedWeapon.Damage;
             double result = Math.Round(weaponMultiplier * (1 + totalIntelligence / 100.0), MidpointRounding.AwayFromZero);
             return result;
         }

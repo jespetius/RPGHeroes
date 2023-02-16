@@ -1,4 +1,5 @@
-﻿using RPGHeroes.Heroes;
+﻿using RPGHeroes.HelperFunctions;
+using RPGHeroes.Heroes;
 using RPGHeroes.Inventory;
 
 namespace RPGHeroes

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGHeroes
+namespace RPGHeroes.HelperFunctions
 {
     public class InvalidWeaponException : Exception
     {
-        public InvalidWeaponException(string message) : base(message) 
-        { 
-            
+        public InvalidWeaponException(string message) : base(message)
+        {
+
         }
 
         public override string Message => "Invalid Weapon Exception";

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGHeroes
+namespace RPGHeroes.Heroes
 {
     class Rogue : Hero
     {
@@ -48,7 +48,7 @@ namespace RPGHeroes
                 }
             }
 
-            double weaponMultiplier = (EquippedWeapon == null ? 1 : EquippedWeapon.Damage);
+            double weaponMultiplier = EquippedWeapon == null ? 1 : EquippedWeapon.Damage;
             double result = Math.Round(weaponMultiplier * (1 + totalDexterity / 100.0), MidpointRounding.AwayFromZero);
             return result;
         }
