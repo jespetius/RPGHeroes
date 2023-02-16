@@ -40,7 +40,41 @@ namespace RPGHeroes
         /// <summary>
         /// Used to display Hero's info.
         /// </summary>
-        public abstract void Display();
+        
+
+        public virtual void Display() 
+        {
+            int totalStrength = Attributes.Strength;
+            int totalDexterity = Attributes.Dexterity;
+            int totalIntelligence = Attributes.Intelligence;
+
+            if (EquippedArmor.Count != 0)
+            {
+                for (int index = 0; index < EquippedArmor.Count; index++)
+                {
+                    KeyValuePair<EquipmentSlot, Armor> armor = EquippedArmor.ElementAt(index);
+                    if (armor.Value == null) continue;
+                    totalStrength += armor.Value.StrengthBoost;
+                    totalDexterity += armor.Value.DexterityBoost;
+                    totalIntelligence += armor.Value.IntelligenceBoost;
+                }
+            }
+
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"Class: {Class}");
+            Console.WriteLine($"Level: {Level}");
+            Console.WriteLine($"Strength: {totalStrength}");
+            Console.WriteLine($"Dexterity: {totalDexterity}");
+            Console.WriteLine($"Intelligence: {totalIntelligence}");
+            Console.WriteLine($"Damage: {HeroDamage()}");
+            if (EquippedWeapon != null)
+            {
+                Console.WriteLine("Weapon: " + EquippedWeapon.Name);
+            }
+            ShowCurrentArmor();
+        }
+
+
 
         /// <summary>
         /// Wearing weapon to Hero

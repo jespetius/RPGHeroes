@@ -25,17 +25,10 @@ namespace RPGHeroes
             Attributes.Strength += 3;
             Attributes.Dexterity += 2;
             Attributes.Intelligence += 1;
+            Console.WriteLine("Hurray you are now Level " + Level);
 
-          
         }
-        public override void Display()
-        {
-            Console.WriteLine($"Name: {Name}");
-            Console.WriteLine($"Level: {Level}");
-            Console.WriteLine($"Strength: {Attributes.Strength}");
-            Console.WriteLine($"Dexterity: {Attributes.Dexterity}");
-            Console.WriteLine($"Intelligence: {Attributes.Intelligence}");
-        }
+        
 
         public override double HeroDamage()
         {

@@ -27,7 +27,7 @@ namespace RPGHeroes
            
             
             //Hero Testman = new Mage("Test Man");
-            
+            //Testman.Update();
 
             //bool showMenu = true;
             //while (showMenu)
