@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RPGHeroes
 {
-    class Rogue : Hero
+    public class Rogue : Hero
     {
         public Rogue(string name) : base(name, 2, 6, 1)
         {
