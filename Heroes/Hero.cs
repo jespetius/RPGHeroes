@@ -37,11 +37,9 @@ namespace RPGHeroes
         /// Used to Level Up Hero
         /// </summary>
         public abstract void LevelUp();
-        /// <summary>
-        /// Used to display Hero's info.
-        /// </summary>
-        
-
+       /// <summary>
+       /// Display Hero info.
+       /// </summary>
         public virtual void Display() 
         {
             int totalStrength = Attributes.Strength;
