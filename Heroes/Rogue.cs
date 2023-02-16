@@ -36,8 +36,20 @@ namespace RPGHeroes
 
         public override double HeroDamage()
         {
+            int totalDexterity = Attributes.Dexterity;
+
+            if (EquippedArmor.Count != 0)
+            {
+                for (int index = 0; index < EquippedArmor.Count; index++)
+                {
+                    KeyValuePair<EquipmentSlot, Armor> armor = EquippedArmor.ElementAt(index);
+                    if (armor.Value == null) continue;
+                    totalDexterity += armor.Value.DexterityBoost;
+                }
+            }
+
             double weaponMultiplier = (EquippedWeapon == null ? 1 : EquippedWeapon.Damage);
-            double result = Math.Round(weaponMultiplier * (1 + Attributes.Dexterity / 100.0), MidpointRounding.AwayFromZero);
+            double result = Math.Round(weaponMultiplier * (1 + totalDexterity / 100.0), MidpointRounding.AwayFromZero);
             return result;
         }
 

@@ -36,8 +36,20 @@ namespace RPGHeroes
        
         public override double HeroDamage()
         {
+            int totalIntelligence = Attributes.Intelligence;
+
+            if (EquippedArmor.Count != 0)
+            {
+                for (int index = 0; index < EquippedArmor.Count; index++)
+                {
+                    KeyValuePair<EquipmentSlot, Armor> armor = EquippedArmor.ElementAt(index);
+                    if (armor.Value == null) continue;
+                    totalIntelligence += armor.Value.IntelligenceBoost;
+                }
+            }
+
             double weaponMultiplier = (EquippedWeapon == null ? 1 : EquippedWeapon.Damage);
-            double result = Math.Round(weaponMultiplier * (1 + Attributes.Intelligence / 100.0), MidpointRounding.AwayFromZero);
+            double result = Math.Round(weaponMultiplier * (1 + totalIntelligence / 100.0), MidpointRounding.AwayFromZero);
             return result;
         }
 

@@ -33,7 +33,18 @@ namespace RPGHeroes
         public override double HeroDamage()
         {
             double weaponMultiplier = (EquippedWeapon == null ? 1 : EquippedWeapon.Damage);
-            double result = Math.Round(weaponMultiplier * (1 + Attributes.Strength / 100.0), MidpointRounding.AwayFromZero);
+            int totalStrength = Attributes.Strength;
+
+            if (EquippedArmor.Count != 0)
+            {
+                for (int index = 0; index < EquippedArmor.Count; index++)
+                {
+                    KeyValuePair<EquipmentSlot, Armor> armor = EquippedArmor.ElementAt(index);
+                    if (armor.Value == null) continue;
+                    totalStrength += armor.Value.StrengthBoost;
+                }
+            }
+            double result = Math.Round(weaponMultiplier * (1 + totalStrength / 100.0), MidpointRounding.AwayFromZero);
             return result;
         }
 
