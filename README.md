@@ -4,11 +4,28 @@ This Project is Back-end Development_Assignment 1: C# Fundamentals.
 
 Goal is to make RPG console application. user creates Hero, chooses Hero class, uses different types weapons and armors.
 
+## Technologies
+
+- C#
+- .NET
+- Visual Code
+- XUnit
+
+
 ## Hero's attributes
 
 Hero have strength, dexterity, and intelligence attributes. These are affected by items held and leveling up.
 
 Hero have also name, level, valid weapon types, and valid armor types.
+
+## Damage
+
+Hero damage = WeaponDamage * (1 + DamagingAttribute/100). DamagingAttribute is affected by used Armors.
+
+- Warrior – damage increased by total strength
+- Mage – damage increased by total intelligence
+- Ranger – damage increased by total dexterity
+- Rogue – damage increased by total dexterity
 
 ## Hero Classes
 
@@ -84,5 +101,13 @@ Each weapon type have Hero classes that are allowed to use them.
 
 ## Unit testing
 
-Coming soon...
+This project has unit tests made by XUnit project. Goal was test most important units from different Hero Classes. 
+
+## Extra feature
+
+I made simple GameController which allow user to choose class, level up, equip armors and weapons to Hero.
+
+## Creator
+
+Jesperi Kuula - [jespetius](https://github.com/jespetius)
 
