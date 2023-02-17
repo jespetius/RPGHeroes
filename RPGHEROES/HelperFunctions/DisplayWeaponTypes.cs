@@ -8,6 +8,11 @@ namespace RPGHeroes.HelperFunctions
 {
     public class DisplayWeaponTypes
     {
+        /// <summary>
+        /// Show Axes and equip wanted weapon
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public static bool ShowAxes(Hero player)
         {
             Console.WriteLine("(1) Rusted Axe. DMG: 5, LVL 1");
@@ -28,7 +33,11 @@ namespace RPGHeroes.HelperFunctions
                 default: return false;
             }
         }
-
+        /// <summary>
+        /// Show Bows and equip wanted weapon
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public static bool ShowBows(Hero player)
         {
             Console.WriteLine("(1) Mini Bow. DMG: 5, LVL 1");
@@ -50,7 +59,11 @@ namespace RPGHeroes.HelperFunctions
             }
         }
 
-
+        /// <summary>
+        /// Show Daggers and equip wanted weapon
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public static bool ShowDaggers(Hero player)
         {
             Console.WriteLine("(1) Small Dagger. DMG: 5, LVL 1");
@@ -71,7 +84,11 @@ namespace RPGHeroes.HelperFunctions
                 default: return false;
             }
         }
-
+        /// <summary>
+        /// Show Hammers and equip wanted weapon
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public static bool ShowHammers(Hero player)
         {
             Console.WriteLine("(1) Iron Hammer. DMG: 5, LVL 1");
@@ -92,7 +109,11 @@ namespace RPGHeroes.HelperFunctions
                 default: return false;
             }
         }
-
+        /// <summary>
+        /// Show Staffs and equip wanted weapon
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public static bool ShowStaffs(Hero player)
         {
             Console.WriteLine("(1) Wooden Staff. DMG: 5, LVL 1");
@@ -113,7 +134,11 @@ namespace RPGHeroes.HelperFunctions
                 default: return false;
             }
         }
-
+        /// <summary>
+        /// Show Swords and equip wanted weapon
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public static bool ShowSwords(Hero player)
         {
             Console.WriteLine("(1) Practice Sword. DMG: 5, LVL 1");
@@ -134,7 +159,11 @@ namespace RPGHeroes.HelperFunctions
                 default: return false;
             }
         }
-
+        /// <summary>
+        /// Show Wands and equip wanted weapon
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public static bool ShowWands(Hero player)
         {
             Console.WriteLine("(1) Common Wand. DMG: 5, LVL 1");

@@ -45,7 +45,11 @@ namespace RPGHeroes
             }
 
         }
-
+        /// <summary>
+        /// Shows Armor slots where to equip Armor
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public static bool WearArmorDisplay(Hero player) 
         {
             Console.WriteLine("(1) Head: ");
@@ -178,7 +182,11 @@ namespace RPGHeroes
                 default: return false;
             }
         }
-
+        /// <summary>
+        /// Show different WeaponTypes available
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public static bool ShowWeaponTypes(Hero player)
         {
             Console.WriteLine("(1) Axes: ");

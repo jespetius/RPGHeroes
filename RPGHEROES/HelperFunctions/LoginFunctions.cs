@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 namespace RPGHeroes
 {
     public class LoginFunctions
-    {
+    {/// <summary>
+    /// to get the username for new hero
+    /// </summary>
+    /// <returns></returns>
         public static string getUsername()
         {
             Console.WriteLine("Welcome Hero to the adventure!");
@@ -20,7 +23,11 @@ namespace RPGHeroes
 
 
         }
-
+        /// <summary>
+        /// choosing and creating hero by type
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
         public static String getHeroType(string userName)
         {
             bool showMenu = true;

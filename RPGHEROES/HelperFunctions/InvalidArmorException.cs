@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace RPGHeroes.HelperFunctions
-{
+{/// <summary>
+/// If armor is invaliod give this exception
+/// </summary>
     public class InvalidArmorException : Exception
     {
         public InvalidArmorException(string message) :base(message) 
